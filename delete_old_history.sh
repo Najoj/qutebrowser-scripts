@@ -1,6 +1,6 @@
 #!/bin/bash
 
-FILE="/home/jojan/.local/share/qutebrowser/history.sqlite"
+FILE="/home/${USER}/.local/share/qutebrowser/history.sqlite"
 TIME="$(date +%s --date="6 months ago")";
 
 CMD="delete from CompletionHistory where last_atime < "
