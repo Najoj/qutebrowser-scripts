@@ -9,4 +9,5 @@ HOST=$(echo $QUTE_URL | cut -d\/ -f3 | sed "s/^www.//")
 echo $HOST >> $FILE
 sort -u $FILE > $TMP
 cp $TMP $FILE
-
+# Inform user
+echo "message-info \"added ${HOST}\" to whitelist" >> ${QUTE_FIFO}
