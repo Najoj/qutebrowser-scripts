@@ -4,7 +4,7 @@
 FILE=/home/${USER}/.config/qutebrowser-cookiecleaner.list
 TMP=${FILE}.tmp
 # Host
-HOST=$(echo $QUTE_URL | cut -d\/ -f3 | sed "s/^www.//")
+HOST=$(echo $QUTE_URL | cut -d\/ -f3 | sed "s/^http(s)?\:\/\//d")
 # Whitelist it
 echo $HOST >> $FILE
 sort -u $FILE > $TMP

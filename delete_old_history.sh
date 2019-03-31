@@ -10,7 +10,9 @@ CMD="$CMD $TIME"
 sqlite3 ${FILE} "${CMD}"
 
 CMD="delete from History where atime < "
-# CMD="select * from History where atime < "
+if [ $# -gt 0 ]; then
+    CMD="select * from History where atime < "
+fi
 
 CMD="$CMD $TIME"
 sqlite3 ${FILE} "${CMD}"
