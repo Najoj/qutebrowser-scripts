@@ -3,7 +3,7 @@
 
 ## SETTINGS
 # File with your user agents. One per line.
-USER_AGENTS="${HOME}/.local/share/qutebrowser/userscripts/user-agents"
+USER_AGENTS="${HOME}/.useragent"
 # Make sure the file exist
 if ! [ -f $USER_AGENTS ]; then
     echo "message-warning \"file $USER_AGENTS does not exist" >> $QUTE_FIFO
@@ -11,9 +11,9 @@ if ! [ -f $USER_AGENTS ]; then
 fi
 
 # Update time
-TIME="10m"
+TIME="60m"
 # Setter string
-SET=":set network user-agent"
+SET=":set content.headers.user_agent"
 # To re-spawn the script
 SPAWN=":spawn --userscript $0"
 
